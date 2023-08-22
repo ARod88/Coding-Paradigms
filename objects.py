@@ -9,13 +9,18 @@ class Podracer:
     def repair(self):
         self.condition = "repaired"
 
-class AnakinsPod(Podracer):
+class AnakinsPod(Podracer): 
+    def __init__(self, max_speed, condition, price):
+        super().__init__(max_speed, condition, price)
 #boost method
     def boost(self):
         self.max_speed *= 2
 
 class SebulbasPod(Podracer):
-    def flame_jet(self, other_podracer):
+     def __init__(self, max_speed, condition, price):
+        super().__init__(max_speed, condition, price)
+
+     def flame_jet(self, other_podracer):
         other_podracer.condition = "trashed"
 
 podracer1 = Podracer(500, "perfect", 2000)
